@@ -5,7 +5,9 @@ class KeyWordTemplateManager:
     keyword_rendering_filters: dict = {
         'PLAIN': 'plain_filtering',
         'dc': 'filter_channel_name',
-        'dw': 'filter_dewar_positioning'
+        'dw': 'filter_dewar_positioning',
+        'not-if-true': 'not_if_true',
+        'enumerate-list': 'enumerate_list'
     }
 
     @classmethod
@@ -32,3 +34,20 @@ class KeyWordTemplateManager:
     def filter_dewar_positioning(**kwargs) -> str:
         field_name, data_value, input_data = KeyWordTemplateManager.parse_args(kwargs)
         return "positioned {}".format(data_value)
+
+    @staticmethod
+    def not_if_true(**kwargs) -> str:
+        field_name, data_value, input_data = KeyWordTemplateManager.parse_args(kwargs)
+        return "" if data_value == 'true' else " not"
+
+    @staticmethod
+    def enumerate_list(**kwargs) -> str:
+        field_name, data_value, input_data = KeyWordTemplateManager.parse_args(kwargs)
+        result_str = ""
+        for index, value in enumerate(data_value):
+            if index < len(data_value) - 1:
+                result_str = result_str + "{}, ".format(value)
+            else:
+                result_str = result_str[:-2]
+                result_str = result_str + " and {}".format(value)
+        return result_str
