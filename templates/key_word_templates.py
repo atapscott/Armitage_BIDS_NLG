@@ -7,7 +7,8 @@ class KeyWordTemplateManager:
         'dc': 'filter_channel_name',
         'dw': 'filter_dewar_positioning',
         'not-if-true': 'not_if_true',
-        'enumerate-list': 'enumerate_list'
+        'enumerate-list': 'enumerate_list',
+        'enumerate-list-hz': 'enumerate_list_hz'
     }
 
     @classmethod
@@ -43,11 +44,17 @@ class KeyWordTemplateManager:
     @staticmethod
     def enumerate_list(**kwargs) -> str:
         field_name, data_value, input_data = KeyWordTemplateManager.parse_args(kwargs)
+        unit = kwargs['unit']
         result_str = ""
         for index, value in enumerate(data_value):
             if index < len(data_value) - 1:
-                result_str = result_str + "{}, ".format(value)
+                result_str = result_str + "{}{}, ".format(value, unit if unit else '')
             else:
                 result_str = result_str[:-2]
-                result_str = result_str + " and {}".format(value)
+                result_str = result_str + " and {}{}".format(value, unit if unit else '')
         return result_str
+
+    @staticmethod
+    def enumerate_list_hz(**kwargs) -> str:
+        kwargs['unit'] = 'Hz'
+        return KeyWordTemplateManager.enumerate_list(**kwargs)
