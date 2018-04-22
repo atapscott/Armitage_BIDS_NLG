@@ -30,7 +30,7 @@ class SentenceTemplateManager:
             key_word_filter = KeyWordTemplateManager.get_key_word_filter(sub_filter_name)
             return key_word_filter(field_name=field_name, data_value=input_data_value, input_data=input_data)
 
-    # TODO just iterating the sentence documente. Should include proper report templates to manage the macro structure.
+    # TODO just iterating the sentence document. Should include proper report templates to manage the macro structure.
     @classmethod
     def get_rendered_templates(cls, input_data: dict) -> (str, str):
         for template_name, template_text in cls.sentence_templates.items():
