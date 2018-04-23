@@ -1,12 +1,12 @@
 {
   "task_name": "The following data correspond to the {TaskName} task.",
   "institution_data": "The recordings were performed in the {InstitutionName}, {InstitutionAddress}.",
-  "device_info": "The device used was the {ManufacturersModelName} from {ManufacturersModelName}, with serial number {DeviceSerialNumber}. The software version was {SoftwareVersions}.",
-  "device_freq_config": "Power line and sampling frequencies were {PowerLineFrequency} and {SamplingFrequency} respectively.",
+  "device_info": "The device used was the {ManufacturersModelName} from {Manufacturer}, with serial number {DeviceSerialNumber}. The software version was {SoftwareVersions}.",
+  "device_freq_config": "Power line and sampling frequencies were {PowerLineFrequency} Hz and {SamplingFrequency} Hz, respectively.",
   "device_channel_count": "There were {MEGChannelCount} MEG channels, {MEGREFChannelCount} of which where MEG reference channels.",
   "device_channels": "The device also included {dc_EEGChannelCount}, {dc_EOGChannelCount}, {dc_ECGChannelCount} and {dc_EMGChannelCount} recorded simultaneously.",
   "recording_properties": "The experiment was recorded during {RecordingDuration} seconds {RecordingType}.",
   "dewar_positioning": "The dewar was {dw_DewarPosition} during the scan.",
-  "head_localization": "Continuous head localisation was{not-if-true_ContinuousHeadLocalization} performed.",
+  "head_localization": "Continuous head localisation was{if-true_ContinuousHeadLocalization} performed.",
   "head_coil_frequency": "The head localisation coils used frequencies of {enumerate-list-hz_HeadCoilFrequency}."
 }
