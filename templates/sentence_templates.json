@@ -7,6 +7,6 @@
   "device_channels": "The device also included {dc_EEGChannelCount}, {dc_EOGChannelCount}, {dc_ECGChannelCount} and {dc_EMGChannelCount} recorded simultaneously.",
   "recording_properties": "The experiment was recorded during {RecordingDuration} seconds {RecordingType}.",
   "dewar_positioning": "The dewar was {dw_DewarPosition} during the scan.",
-  "head_localization": "Continuous head localisation was{if-true_ContinuousHeadLocalization} performed.",
+  "head_localization": "Continuous head localisation was{not-if-true_ContinuousHeadLocalization} performed.",
   "head_coil_frequency": "The head localisation coils used frequencies of {enumerate-list-hz_HeadCoilFrequency}."
 }
