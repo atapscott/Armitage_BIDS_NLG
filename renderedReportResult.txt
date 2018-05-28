@@ -1,1 +1,6 @@
-The following data correspond to the rest task. The recordings were performed in the Stanford University, 450 Serra Mall, Stanford, CA 94305-2004, USA. The device used was the CTF-275 from CTF-275, with serial number 11035. The software version was Acq 5.4.2-linux-20070507. Power line and sampling frequencies were 60 and 2400 respectively. There were 270 MEG channels, 26 of which where MEG reference channels. The device also included 0 EEG channels, 2 EOG channels, 1 ECG channel and 0 EMG channels recorded simultaneously. The experiment was recorded during 600 seconds continuous. The dewar was positioned upright during the scan. Continuous head localisation was not performed. The head localisation coils used frequencies of 1470Hz, 1530Hz and 1590Hz. 
+The following data correspond to the rest task. The recordings were performed in the Stanford University, 450 Serra Mall, Stanford, CA 94305-2004, USA.
+
+The device used was the CTF-275 from CTF, with serial number 11035. The software version was Acq 5.4.2-linux-20070507. Power line and sampling frequencies were 60 Hz and 2400 Hz, respectively. There were 270 MEG channels, 26 of which where MEG reference channels. The device also included 0, 2, 1 and 0 recorded simultaneously.
+The experiment was recorded during 600 seconds continuous.
+
+Head localisation was continuous. The dewar was positioned upright during the scan. Head localisation coils used frequencies of 1470Hz and 1530Hz and 1590Hz. 
