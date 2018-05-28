@@ -16,6 +16,8 @@ def parse_arguments():
     return args
 
 
+OUTFILE: str = 'renderedReportResult.txt'
+
 if __name__ == '__main__':
 
     input_args = parse_arguments()
@@ -30,7 +32,7 @@ if __name__ == '__main__':
 
     print(rendered_template)
 
-    with open('renderedReportResult.txt', 'w') as out:
+    with open(OUTFILE, 'w') as out:
         out.write("{} ".format(rendered_template))
 
 
