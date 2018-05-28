@@ -1,1 +1,1 @@
-The device also included {{EEGChannelCount}}, {{EOGChannelCount}}, {{ECGChannelCount}} and {{EMGChannelCount}} recorded simultaneously.
+The device also included {{EEGChannelCount}} EEG channels, {{EOGChannelCount}} EOG channels, {{ECGChannelCount}} ECG channels and {{EMGChannelCount}} EMG channels recorded simultaneously.
