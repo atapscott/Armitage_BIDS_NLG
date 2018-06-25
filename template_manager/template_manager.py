@@ -20,13 +20,17 @@ class TemplateManager:
         )
 
     @classmethod
-    def render_template(cls, template_name: str, **kwargs) -> str:
+    def render_template(cls, **kwargs) -> str:
         """ Render the template after the provided name.
 
-        :param template_name: Filename of the required template, sans the .tmp extension.
         :param kwargs: Data used for the template rendering.
         :return: Rendered text for the requested template. Includes any subtemplates in the hierarchy.
         """
-        template_filename: str = "{}.tmp".format(template_name)
+        input_data: dict = {}
+        for data_dict_name, data_dict in kwargs.items():
+            for k, v in data_dict.items():
+                input_data['{}_{}'.format(data_dict_name, k)] = v
+
+        template_filename: str = "{}.tmp".format(kwargs['input_args']['parent_template_name'])
         template = cls.env.get_template(template_filename)
-        return template.render(kwargs['input_data'])
+        return template.render(input_data)

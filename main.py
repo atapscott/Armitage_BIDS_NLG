@@ -12,10 +12,11 @@ def parse_arguments():
 
     # Add the parsing of arguments
     parser = argparse.ArgumentParser(
-        description='Template-based BIDS report language generation')
+        description='Template-based BIDS report natural language generation')
 
     # Add the argument for the parent or root template name
-    parser.add_argument('-t', action="store", dest='parent_template_name', default='base_report')
+    parser.add_argument('-tmp', action="store", dest='parent_template_name', default='base_report')
+    parser.add_argument('-technique', action="store", dest='technique')
 
     args = parser.parse_args()
 
@@ -40,7 +41,7 @@ if __name__ == '__main__':
     TemplateManager.initialize()
 
     # Render the root patter, hierarchically rendering all the sub-patterns
-    rendered_template: str = TemplateManager.render_template(parent_template_name, input_data=input_data)
+    rendered_template: str = TemplateManager.render_template(input_args=vars(input_args), input_data=input_data)
 
     # Print the result in stdout
     print(rendered_template)
