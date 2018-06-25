@@ -1,6 +1,3 @@
 {% include 'task_name.tmp' %} {% include 'institution.tmp' %}
 
-{% include 'device_info.tmp' %} {% include 'device_freq_config.tmp' %} {% include 'device_channel_count.tmp' %} {% include 'device_channels.tmp' %}
-{% include 'recording_properties.tmp' %}
-
-{% if ContinuousHeadLocalization %}{% include 'head_localisation.tmp' %} {% endif %}{% include 'dewar_positioning.tmp' %} {% include 'head_coil_frequency.tmp' %}
+{% if input_args_technique == 'meg'%}{% include 'meg_base_report.tmp' %} {% endif %}
