@@ -1,8 +1,10 @@
 import json
+import csv
 import argparse
 import loader.file_probe
 from constants import constants
 from pprint import pprint
+import processor.render_specific_metrics
 
 from template_manager import *
 
@@ -42,6 +44,25 @@ def select_file_path_render_type() -> (str, str):
     return supported_data_files[selected_data_index]
 
 
+def load_file(file_path: str):
+    file_data = None
+    if '.json' in file_path:
+        file_data = json.load(open(file_path))
+    elif '.tsv' in file_path:
+        with open(file_path, 'r') as infile:
+            json_data_rows: list = [d for d in csv.DictReader(infile, delimiter='\t')]
+            file_data: dict = {'rows': json_data_rows}
+    return file_data
+
+
+def add_render_specific_metrics(render_type: str, input_data: dict):
+    if hasattr(processor.render_specific_metrics, '{}_metrics'.format(render_type)):
+        metric_function = getattr(processor.render_specific_metrics, '{}_metrics'.format(render_type))
+        input_data = metric_function(input_data)
+
+    return input_data
+
+
 if __name__ == '__main__':
 
     print('Running _Armitage_  - BIDS Report NLG')
@@ -51,7 +72,9 @@ if __name__ == '__main__':
 
     file_path, render_type = select_file_path_render_type()
 
-    input_data = json.load(open(file_path))
+    input_data = load_file(file_path)
+
+    input_data = add_render_specific_metrics(render_type, input_data)
 
     input_data['render_type'] = render_type
 
