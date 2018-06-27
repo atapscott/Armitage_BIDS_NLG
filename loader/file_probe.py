@@ -1,6 +1,7 @@
 import os
 from constants import constants
 
+
 def get_path_supported_data_files(path: str) -> list:
     supported_data_files: list = []
     file_names = os.listdir(path)  # get all files' and folders' names in the current directory
@@ -21,6 +22,7 @@ def is_supported_bids_data(file_name: str) -> (bool, str):
     supported_formats: set = (
         ('_meg.json', constants.MEG_TECHNIQUE),
         ('dataset_description.json', constants.DATASET_DESCRIPTION),
+        ('participants.tsv', constants.PARTICIPANT_DATA),
     )
 
     for supported_format in supported_formats:
