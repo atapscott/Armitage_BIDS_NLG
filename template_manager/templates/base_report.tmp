@@ -1,3 +1,0 @@
-{% include 'task_name.tmp' %} {% include 'institution.tmp' %}
-
-{% if input_args_technique == 'meg'%}{% include 'meg_base_report.tmp' %} {% endif %}
