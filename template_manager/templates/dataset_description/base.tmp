@@ -1,0 +1,2 @@
+Data used in this study comes from the the {{Name}} dataset, organized following the BIDS version {{BIDSVersion}} (REF: Gorgolewski et al. 2016). {{HowToAcknowledge}} The dataset is distributed under {{License}} license. ((The following authors contributed to the creation/curation of the dataset {{Authors}} and acknowledge {{Acknowledgements}} for helping to collect the data.)) .
+The data was acquired thanks to the following funding {{Funding}}. Check the following references and links {{ReferencesAndLinks}}. DOI: {{DatasetDOI}}
