@@ -1,1 +1,1 @@
-The experiment was recorded during {{RecordingDuration}} seconds {{RecordingType}}.
+{% if RecordingType == 'continuous' %}The experiment was recorded continuously during {{RecordingDuration}} seconds.{% elif RecordingType == 'epoched' %}The experiment was recorded during {{RecordingDuration}} seconds, epoched in segments of {{EpochLength}} seconds.{% endif %}
