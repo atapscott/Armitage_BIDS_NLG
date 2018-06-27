@@ -18,7 +18,10 @@ def get_path_supported_data_files(path: str) -> list:
 
 
 def is_supported_bids_data(file_name: str) -> (bool, str):
-    supported_formats: set = (('_meg.json', constants.MEG_TECHNIQUE),)
+    supported_formats: set = (
+        ('_meg.json', constants.MEG_TECHNIQUE),
+        ('dataset_description.json', constants.DATASET_DESCRIPTION),
+    )
 
     for supported_format in supported_formats:
         if supported_format[0] in file_name:
